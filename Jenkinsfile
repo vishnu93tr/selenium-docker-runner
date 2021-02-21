@@ -8,10 +8,10 @@ pipeline{
         }
         stage("Run Tests and check for failures"){
             steps{
-                warnError(message: book_flight_module_chrome is failed){
+                warnError(message: 'book_flight_module_chrome is failed'){
                     sh "docker-compose up --exit-code-from book_flight_module_chrome"
                 }
-                warnError(message: book_flight_module_firefox is failed){
+                warnError(message: 'book_flight_module_firefox is failed'){
                     sh "docker-compose up --exit-code-from book_flight_module_firefox"
                 }
             }
