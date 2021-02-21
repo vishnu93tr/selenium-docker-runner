@@ -2,8 +2,6 @@ version: "3"
 services:
   hub:
     image: selenium/hub:3.141.59
-    ports:
-    - "4444:4444"
   chrome:
     image: selenium/node-chrome:3.141.59
     depends_on:
@@ -29,7 +27,7 @@ services:
       - BROWSER=chrome
       - MODULE=book_flights.xml
     volumes:
-      - ./book_flights_chrome:/usr/share/selenium-docker-automation/test-output
+      - ./output/book_flights_chrome:/usr/share/selenium-docker-automation/test-output
   book_flight_module_firefox:
     image: vishnu26121993/selenium-docker:latest
     depends_on:
@@ -40,5 +38,5 @@ services:
       - BROWSER=firefox
       - MODULE=book_flights.xml
     volumes:
-      - ./book_flights_firefox:/usr/share/selenium-docker-automation/test-output
+      - ./output/book_flights_firefox:/usr/share/selenium-docker-automation/test-output
 
