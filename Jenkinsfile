@@ -8,14 +8,14 @@ pipeline{
         }
         stage("Run Tests in chrome"){
             steps{
-                sh "docker-compose up --exit-code-from  book_flight_module_chrome"
+                sh "docker-compose up book_flight_module_chrome"
                 
             }
         }
         stage("Run Tests in firefox"){
             steps{
                 
-                sh "docker-compose up --exit-code-from  book_flight_module_firefox"
+                sh "docker-compose upbook_flight_module_firefox"
                 
             }
         }
