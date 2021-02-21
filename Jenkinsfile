@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+        stage("Pull latest image"){
+            steps{
+                sh "docker pull vishnu26121993/selenium-docker"
+            }
+        }
         stage("Start grid and browsers in background mode"){
            steps{
                sh "docker-compose up -d hub chrome firefox"
