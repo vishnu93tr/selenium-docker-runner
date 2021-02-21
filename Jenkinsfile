@@ -6,11 +6,9 @@ pipeline{
                sh "docker-compose up -d hub chrome firefox"
            }
         }
-        stage("Run Tests and check for failures"){
+        stage("Run Tests"){
             steps{
-                warnError(message: 'book_flight_module is failed'){
-                    sh "docker-compose up --exit-code-from book_flight_module_chrome book_flight_module_firefox"
-                }    
+                sh "docker-compose up  book_flight_module_chrome book_flight_module_firefox"
             }
         }
         stage("stop grid"){
