@@ -8,7 +8,9 @@ pipeline{
         }
         stage("Run Tests"){
             steps{
-                sh "docker-compose up  book_flight_module_chrome book_flight_module_firefox"
+                warnError(message: 'Tests failed') {
+                sh "docker-compose up --exit-code-from book_flight_module_chrome book_flight_module_firefox"
+                }
             }
         }
         stage("stop grid"){
