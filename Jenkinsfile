@@ -15,7 +15,7 @@ pipeline{
         stage("Run Tests in firefox"){
             steps{
                 
-                sh "docker-compose upbook_flight_module_firefox"
+                sh "docker-compose up book_flight_module_firefox"
                 
             }
         }
