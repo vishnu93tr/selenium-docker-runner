@@ -8,16 +8,15 @@ pipeline{
         }
         stage("Run Tests in chrome"){
             steps{
-                warnError(message: 'Tests failed') {
                 sh "docker-compose up --exit-code-from  book_flight_module_chrome"
-                }
+                
             }
         }
         stage("Run Tests in firefox"){
             steps{
-                warnError(message: 'Tests failed') {
+                
                 sh "docker-compose up --exit-code-from  book_flight_module_firefox"
-                }
+                
             }
         }
     }
