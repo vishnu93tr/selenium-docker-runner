@@ -20,7 +20,7 @@ services:
     environment:
       - HUB_HOST=hub
   book_flight_module_chrome:
-    image: vishnu26121993/selenium-docker
+    image: vishnu26121993/selenium-docker:latest
     depends_on:
       - chrome
       - firefox
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./book_flights_chrome:/usr/share/selenium-docker-automation/test-output
   book_flight_module_firefox:
-    image: vishnu26121993/selenium-docker
+    image: vishnu26121993/selenium-docker:latest
     depends_on:
       - chrome
       - firefox
