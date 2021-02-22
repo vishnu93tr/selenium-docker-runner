@@ -13,18 +13,12 @@ pipeline{
         }
         stage("Run Tests in chrome"){
             steps{
-                warnError(message: 'Book flight module in chrome failed'){
-                    sh "docker-compose up --exit-code-from book_flight_module_chrome"
-                }
-                
+                    sh "docker-compose up  book_flight_module_chrome"
             }
         }
         stage("Run Tests in firefox"){
             steps{
-                warnError(message: 'Book flight module in firefox failed'){
-                sh "docker-compose up --exit-code-from book_flight_module_firefox"
-                }
-                
+                sh "docker-compose up  book_flight_module_firefox"  
             }
         }
     }
